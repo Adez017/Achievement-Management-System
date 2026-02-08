@@ -10,7 +10,7 @@ from config import DevelopmentConfig, ProductionConfig
 from firebase_config import get_firebase_config, validate_firebase_config
 
 # Load environment variables from .env file
-load_dotenv()
+# load_dotenv()
 
 from dotenv import load_dotenv
 
@@ -33,7 +33,7 @@ if env == "production":
 else:
     app.config.from_object(DevelopmentConfig)
     
-app.config["MAX_CONTENT_LENGTH"] = app.config["MAX_CONTENT_LENGTH"]
+# app.config["MAX_CONTENT_LENGTH"] = app.config["MAX_CONTENT_LENGTH"]
 
 DB_PATH = app.config["DB_PATH"]
 UPLOAD_FOLDER = app.config["UPLOAD_FOLDER"]
@@ -200,7 +200,7 @@ def init_db():
     connection.close()
 
 # Call initialization function
-init_db()
+# init_db()
 
 @app.route("/")
 def home():
@@ -782,3 +782,4 @@ if __name__ == "__main__":
     # migrate_achievements_table()
     add_teacher_id_column()
     app.run(debug=True)
+
